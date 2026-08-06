@@ -4,7 +4,7 @@
 
 - Paper 1.21.x
 - Java 21
-- `CatClans-v0.1.0-BETA.jar`
+- `CatClans-v0.1.1-BETA.jar`
 
 ## Economy
 

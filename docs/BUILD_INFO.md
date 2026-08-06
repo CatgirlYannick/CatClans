@@ -1,8 +1,8 @@
 # Build Information
 
-- Maven coordinates: `dev.catgirlyannick:catclans:0.1.0-BETA`
+- Maven coordinates: `dev.catgirlyannick:catclans:0.1.1-BETA`
 - Java release: 21
-- Output: `target/CatClans-v0.1.0-BETA.jar`
+- Output: `target/CatClans-v0.1.1-BETA.jar`
 - Maximum JAR size: 3 MiB
 - Tests: JUnit 5
 

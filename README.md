@@ -32,7 +32,7 @@ The public download text is available in [docs/DOWNLOAD_DESCRIPTION.md](docs/DOW
 mvn clean package
 ```
 
-The release JAR is written as `target/CatClans-v0.1.0-BETA.jar`. The Maven build runs the test suite, stages documentation, verifies the JAR size, and creates the upload package.
+The release JAR is written as `target/CatClans-v0.1.1-BETA.jar`. The Maven build runs the test suite, stages documentation, verifies the JAR size, and creates the upload package.
 
 ## First Start
 

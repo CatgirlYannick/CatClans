@@ -3,7 +3,7 @@
 ## Current Build
 
 - Plugin: `CatClans`
-- Version: `0.1.0-BETA`
+- Version: `0.1.1-BETA`
 - Main class: `dev.catgirlyannick.catclans.CatClansPlugin`
 - PAPI identifier: `catclans`
 - Java: 21
