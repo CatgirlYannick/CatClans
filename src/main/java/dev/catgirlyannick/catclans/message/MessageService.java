@@ -173,6 +173,9 @@ public final class MessageService {
             String raw,
             Map<String, String> placeholders
     ) {
+        if (raw.indexOf('{') < 0) {
+            return raw;
+        }
         Matcher matcher = CONFIG_PLACEHOLDER.matcher(raw);
         StringBuilder resolved = new StringBuilder(raw.length());
         while (matcher.find()) {

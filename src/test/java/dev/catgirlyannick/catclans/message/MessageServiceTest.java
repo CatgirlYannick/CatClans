@@ -14,6 +14,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class MessageServiceTest {
 
     @Test
+    void resolvesConfiguredPluginNameInGuiTitlesAndMessagePrefixes() {
+        Component rendered = MessageService.renderTemplate(
+                MiniMessage.miniMessage(),
+                "<dark_gray>[{plugin_name}]</dark_gray> <dark_red>{plugin_name}",
+                Map.of("plugin_name", "CatClans")
+        );
+
+        assertEquals(
+                "[CatClans] CatClans",
+                PlainTextComponentSerializer.plainText().serialize(rendered)
+        );
+    }
+
+    @Test
     void preservesLegacyRgbCodesDuringSmallCapsFormatting() {
         assertTrue(
                 SmallCapsFormatter.formatValue("&#D67DE9&l&oMeow")
