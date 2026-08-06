@@ -1,0 +1,42 @@
+# ============================================================
+# CatClans - Permission-Dokumentation
+# ============================================================
+# This file documents the mapping. Bukkit/LuckPerms nodes are also defined
+# in plugin.yml and must be updated whenever features are added.
+# ============================================================
+
+config-version: 36
+
+bundles:
+  default:
+    node: "catclans.default.*"
+  support:
+    node: "catclans.support.*"
+  management:
+    node: "catclans.management.*"
+  administration:
+    node: "catclans.admin.*"
+
+administrative-actions:
+  war-end: "catclans.admin.war.end"
+
+clan-rights:
+  invite: "invite"
+  kick: "kick"
+  diplomacy-manage: "diplomacy.manage"
+  name-change: "name.change"
+  tag-change: "tag.change"
+  home-view: "home.view"
+  home-teleport: "home.teleport"
+  home-set: "home.set"
+  home-delete: "home.delete"
+  rank-manage: "rank.manage"
+  bank-view: "bank.view"
+  bank-deposit: "bank.deposit"
+  bank-withdraw: "bank.withdraw"
+  bank-log: "bank.log"
+  vault-view: "vault.view"
+  vault-deposit: "vault.deposit"
+  vault-withdraw: "vault.withdraw"
+  vault-log: "vault.log"
+  vault-manage-extensions: "vault.extensions.manage"

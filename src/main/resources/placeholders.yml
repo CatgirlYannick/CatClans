@@ -1,0 +1,49 @@
+# ============================================================
+# CatClans - PlaceholderAPI
+# ============================================================
+# Purpose:
+#   Configures the internal PlaceholderAPI expansion.
+#
+# Notes:
+#   - All requests use the in-memory cache only.
+#   - Placeholder requests never access the database.
+#   - Unimplemented systems return safe fallback values.
+#
+# Version:
+#   8
+# ============================================================
+
+config-version: 36
+
+general:
+  enabled: true
+  identifier: "catclans"
+
+fallbacks:
+  no-player: ""
+  no-clan: ""
+  unavailable: "Unavailable"
+  no-ally: ""
+  no-rival: ""
+  battlepass-level: "0"
+  ranking-tier: "Unavailable"
+
+enabled-placeholders:
+  server-name: true
+  plugin-name: true
+  author-name: true
+  clan-name: true
+  clan-tag: true
+  clan-tag-formatted: true
+  clan-tag-colored: true
+  rank: true
+  ranking-tier: true
+  ranking-points: true
+  bank-balance: true
+  member-count: true
+  max-members: true
+  battlepass-level: true
+  battlepass-xp: true
+  battlepass-required-xp: true
+  ally: true
+  rival: true

@@ -1,0 +1,53 @@
+# ============================================================
+# CatClans - Leaderboards
+# ============================================================
+# Purpose:
+#   Controls categories, point calculations, and automatic war scoring.
+#
+# Notes:
+#   - Leaderboards are permanent and are not reset automatically.
+#   - Negative war points use the 0.5 multiplier
+#     in full. A lost war therefore counts as -2.5 points by default.
+#   - The money category remains visibly locked while the clan bank is disabled.
+# ============================================================
+
+config-version: 36
+
+general:
+  enabled: true
+  permanent: true
+
+activity:
+  # A clan receives at most one point per calendar day after at least
+  # ein aktuelles Mitglied online ist.
+  timezone: "Europe/Berlin"
+  # Also limits the maximum delay of cached leaderboard positions.
+  # Allowed range: 10 to 300 seconds.
+  maintenance-interval-seconds: 60
+
+pvp:
+  # Only kills against members of other, non-allied clans count.
+  points-per-valid-kill: 1
+  repeated-victim-cooldown-minutes: 15
+
+scoring:
+  points-per-member: 1
+  money-amount-per-point: 10000
+  points-per-war-win: 10
+  points-per-war-loss: -5
+  negative-point-multiplier: 0.5
+  points-per-active-day: 1
+
+sorting:
+  # Ties are resolved without shared positions by visible clan tag
+  # in alphabetical order. The clan UUID is the stable final fallback.
+  tie-breaker: "CLAN_TAG_ASC"
+
+categories:
+  total: true
+  combat: true
+  members: true
+  money: true
+  wars-won: true
+  wars-lost: true
+  activity: true

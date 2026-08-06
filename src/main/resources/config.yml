@@ -1,0 +1,103 @@
+# ============================================================
+# CatClans - Main Configuration
+# ============================================================
+# Purpose:
+#   Controls core clan behavior, naming rules, limits, and invitations.
+#
+# Notes:
+#   - Changes currently require a full server restart.
+#   - Unknown configuration versions stop startup to protect data.
+#   - Unfinished features are disabled by default.
+#
+# Version:
+#   16
+# ============================================================
+
+config-version: 36
+
+branding:
+  # Public server name used by the {server_name} message placeholder.
+  # Replace this value after the first start; no code changes are required.
+  server-name: "{{SERVER_NAME}}"
+  # Public author label used by {author_name}.
+  author-name: "CatgirlYannick"
+  # Display name used by {plugin_name}.
+  plugin-name: "CatClans"
+
+general:
+  # Enables the clan core. When false, the plugin registers no commands.
+  enabled: true
+
+features:
+  clan-core:
+    enabled: true
+  gui:
+    enabled: true
+  economy:
+    enabled: true
+  placeholders:
+    enabled: true
+  alliances:
+    enabled: true
+  battlepass:
+    enabled: true
+  bank:
+    # Requires Vault and an active economy provider.
+    enabled: true
+  item-vault:
+    enabled: true
+  clan-wars:
+    enabled: true
+  rankings:
+    enabled: true
+  clan-homes:
+    enabled: true
+  claim-hook:
+    enabled: false
+  admin-config-gui:
+    # The final command is not defined yet, so keep this disabled.
+    enabled: false
+
+clans:
+  names:
+    min-length: 1
+    max-length: 20
+    # Unicode letters/numbers, spaces, hyphens, and underscores.
+    # Control characters and line breaks are always rejected.
+    allowed-pattern: "^[\\p{L}\\p{N}][\\p{L}\\p{N} _-]*$"
+
+  tags:
+    min-length: 2
+    max-length: 6
+    # Maximum length of the complete MiniMessage input, including formatting.
+    # The visible tag is still restricted by min/max-length.
+    maximum-format-length: 256
+    # Special characters remain disabled by default.
+    # To allow hyphens and underscores, use ^[A-Za-z0-9_-]+$.
+    allowed-pattern: "^[A-Za-z0-9]+$"
+
+  members:
+    # The owner counts toward this initial member limit.
+    default-max-members: 27
+    absolute-max-members: 500
+
+  roles:
+    # Only the five default roles are available initially.
+    default-max-roles: 5
+    # Battlepass unlocks may increase this to ten roles.
+    absolute-max-roles: 10
+    name-max-length: 24
+    allowed-pattern: "^[\\p{L}\\p{N} _-]+$"
+
+  join:
+    default-mode: "INVITE_ONLY"
+    invite-expiration-hours: 48
+
+security:
+  # When true, owners cannot leave. When false, ownership is transferred to
+  # the eligible member with the highest role priority.
+  prevent-owner-leaving: false
+
+advanced:
+  # One worker serializes domain writes and database operations.
+  service-worker-name: "CatClans-Service"

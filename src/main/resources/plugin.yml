@@ -1,0 +1,153 @@
+name: CatClans
+version: '${project.version}'
+main: dev.catgirlyannick.catclans.CatClansPlugin
+api-version: '1.21'
+description: Configurable standalone clan plugin for {{SERVER_NAME}}.
+authors: [CatgirlYannick]
+softdepend: [Vault, EzEconomy, LuckPerms, PlaceholderAPI, InteractiveChat]
+libraries:
+  - org.xerial:sqlite-jdbc:3.46.1.0
+  - com.mysql:mysql-connector-j:9.3.0
+
+commands:
+  clan:
+    description: Opens and manages the clan system.
+    usage: /clan
+    aliases: [clans]
+  clantop:
+    description: Opens the permanent clan leaderboard.
+    usage: /clantop
+  clanadmin:
+    description: Runs administrative clan actions.
+    usage: /clanadmin <delete|war> ...
+
+permissions:
+  catclans.default.*:
+    description: Bundle containing all standard player features.
+    default: true
+    children:
+      catclans.command.clan: true
+      catclans.clan.create: true
+      catclans.clan.invite: true
+      catclans.clan.kick: true
+      catclans.clan.join: true
+      catclans.clan.leave: true
+      catclans.clan.delete: true
+      catclans.clan.joinmode: true
+      catclans.clan.name.change: true
+      catclans.clan.tag.change: true
+      catclans.clan.profile: true
+      catclans.clan.members: true
+      catclans.clan.list: true
+      catclans.clan.ranking.view: true
+      catclans.clan.permissions.manage: true
+      catclans.clan.battlepass.view: true
+      catclans.clan.vault.open: true
+      catclans.clan.bank.view: true
+      catclans.clan.homes.open: true
+      catclans.clan.diplomacy: true
+
+  catclans.support.*:
+    description: Read-only support inspection bundle.
+    default: false
+    children:
+      catclans.support.clan.view: true
+      catclans.support.logs.view: true
+      catclans.support.player.inspect: true
+
+  catclans.management.*:
+    description: Bundle for privileged management actions.
+    default: false
+    children:
+      catclans.command.clanadmin: true
+      catclans.management.clan.transfer: true
+      catclans.management.clan.delete: true
+      catclans.management.sanction.prepare: true
+      catclans.management.battlepass.correct: true
+
+  catclans.admin.*:
+    description: Bundle for full administrative access.
+    default: false
+    children:
+      catclans.default.*: true
+      catclans.support.*: true
+      catclans.management.*: true
+      catclans.admin.config: true
+      catclans.admin.debug: true
+      catclans.admin.reload: true
+      catclans.admin.data.correct: true
+      catclans.admin.battlepass.rewards: true
+      catclans.admin.war.end: true
+
+  catclans.command.clan:
+    description: Allows the main /clan command.
+    default: false
+  catclans.command.clanadmin:
+    description: Allows the administrative clan command.
+    default: false
+  catclans.clan.create:
+    description: Allows clan creation.
+    default: false
+  catclans.clan.invite:
+    description: Allows clan invitations when the clan permission is granted.
+    default: false
+  catclans.clan.kick:
+    description: Allows kicking lower-ranked members through the member GUI.
+    default: false
+  catclans.clan.join:
+    description: Allows accepting invitations and joining open clans.
+    default: false
+  catclans.clan.leave:
+    description: Allows leaving the current clan.
+    default: false
+  catclans.clan.delete:
+    description: Allows the owner to permanently delete the clan.
+    default: false
+  catclans.clan.joinmode:
+    description: Allows changing the join mode when the clan permission is granted.
+    default: false
+  catclans.clan.name.change:
+    description: Allows changing the clan name when the clan permission is granted.
+    default: false
+  catclans.clan.tag.change:
+    description: Allows changing and formatting the clan tag when the clan permission is granted.
+    default: false
+  catclans.clan.profile:
+    description: Allows viewing public clan profiles.
+    default: false
+  catclans.clan.members:
+    description: Allows viewing the public member GUI.
+    default: false
+  catclans.clan.list:
+    description: Allows viewing the clan list.
+    default: false
+  catclans.clan.ranking.view:
+    description: Allows viewing the permanent clan leaderboard.
+    default: false
+  catclans.clan.permissions.manage:
+    description: Allows owners to manage role and member permissions.
+    default: false
+  catclans.clan.battlepass.view:
+    description: Allows viewing the clan battlepass.
+    default: false
+  catclans.clan.vault.open:
+    description: Allows opening the item vault; clan permissions are checked separately.
+    default: false
+  catclans.clan.bank.view:
+    description: Allows opening the clan bank; clan permissions control transactions and logs.
+    default: false
+  catclans.clan.homes.open:
+    description: Allows opening clan homes; clan permissions control use and management.
+    default: false
+  catclans.clan.diplomacy:
+    description: Allows diplomacy GUIs; the diplomacy.manage clan permission is checked separately.
+    default: false
+  catclans.admin.battlepass.rewards:
+    description: Allows editing global battlepass rewards in game.
+    default: false
+  catclans.admin.war.end:
+    description: Allows administrators to score and end active clan wars.
+    default: false
+  catclans.management.clan.delete:
+    description: Allows administrators to delete any clan.
+    default: false

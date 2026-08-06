@@ -1,0 +1,1391 @@
+# ============================================================
+# CatClans - GUI Configuration
+# ============================================================
+
+config-version: 36
+
+general:
+  enabled: true
+  # GUI content is created only when opened. No tick-based refresh is used.
+  live-refresh:
+    enabled: false
+
+common:
+  filler:
+    enabled: true
+    material: "BLACK_STAINED_GLASS_PANE"
+    display-name: " "
+  frame:
+    enabled: true
+    material: "PURPLE_STAINED_GLASS_PANE"
+    display-name: " "
+    top-row: true
+    bottom-row: true
+
+main-menu:
+  title: "<dark_gray>Clan <gold>Menu"
+  size: 54
+
+  profile:
+    slot: 13
+    material: "PLAYER_HEAD"
+    display-name: "<gradient:#FFB347:#FFD166>{clan}</gradient>"
+    lore:
+      - "<gray>Tag: <white>{formatted_tag}"
+      - "<gray>Members: <white>{members}/{max_members}"
+
+  members:
+    slot: 20
+    material: "PLAYER_HEAD"
+    display-name: "<gold>Members"
+
+  join-mode:
+    slot: 24
+    material: "COMPARATOR"
+    display-name: "<gold>Join mode"
+    lore:
+      - "<gray>Current: <white>{mode}"
+
+  create:
+    slot: 22
+    material: "NAME_TAG"
+    display-name: "<green>Create clan"
+    lore:
+      - "<gray>Shows the complete chat command."
+
+  browse:
+    slot: 30
+    material: "COMPASS"
+    display-name: "<gold>Clan list"
+
+  rankings:
+    slot: 31
+    material: "NETHER_STAR"
+    display-name: "<gold>Leaderboard"
+
+  invitations:
+    slot: 32
+    material: "PAPER"
+    display-name: "<yellow>Invitations"
+
+  leave:
+    slot: 40
+    material: "DARK_OAK_DOOR"
+    display-name: "<red>Leave clan"
+
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+  admin-battlepass:
+    slot: 49
+    material: "COMMAND_BLOCK"
+    display-name: "<red>Battlepass editor"
+    lore:
+      - "<gray>Manage global level rewards."
+
+clan-list-menu:
+  title: "<dark_gray>Clan list"
+  size: 54
+  clan-slots:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+
+  clan:
+    material: "PLAYER_HEAD"
+    display-name: "<gold>{clan}"
+    lore:
+      - "<gray>Tag: <white>{formatted_tag}"
+      - "<gray>Members: <white>{members}/{max_members}"
+
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+
+  previous:
+    slot: 48
+    material: "ARROW"
+    display-name: "<gold>Previous page"
+
+  next:
+    slot: 50
+    material: "ARROW"
+    display-name: "<gold>Next page"
+
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+ranking-menu:
+  title: "<dark_gray>Leaderboard · <gold>{category}"
+  size: 54
+  values:
+    money-enabled: "Aktiv"
+    money-disabled: "Disabled"
+    categories:
+      total: "Overall"
+      combat: "Combat points"
+      members: "Members"
+      money: "Clan bank"
+      wars-won: "Wars won"
+      wars-lost: "Wars lost"
+      activity: "Activity"
+  entry-slots:
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+
+  categories:
+    total:
+      slot: 10
+      material: "NETHER_STAR"
+      display-name: "<gold>Overall"
+    combat:
+      slot: 11
+      material: "DIAMOND_SWORD"
+      display-name: "<red>Combat points"
+    members:
+      slot: 12
+      material: "PLAYER_HEAD"
+      display-name: "<yellow>Members"
+    money:
+      slot: 13
+      material: "GOLD_BLOCK"
+      display-name: "<gold>Clan bank"
+      lore:
+        - "<gray>Status: <white>{money_status}"
+    wars-won:
+      slot: 14
+      material: "LIME_BANNER"
+      display-name: "<green>Wars won"
+    wars-lost:
+      slot: 15
+      material: "RED_BANNER"
+      display-name: "<red>Wars lost"
+    activity:
+      slot: 16
+      material: "CLOCK"
+      display-name: "<aqua>Activity"
+
+  entry:
+    material: "PLAYER_HEAD"
+    display-name: "<gold>#{position} <white>{clan} <gray>[{formatted_tag}<gray>]"
+    lore:
+      - "<gray>{category}: <white>{category_points}"
+      - "<gray>Total points: <white>{total_points}"
+      - ""
+      - "<dark_gray>Combat: {combat_points} · Members: {member_points}"
+      - "<dark_gray>Money: {money_points} · Activity: {activity_points}"
+      - "<dark_gray>Wins: {wars_won_points} · Losses: {wars_lost_points}"
+      - ""
+      - "<yellow>Click to open the clan profile"
+
+  money-disabled:
+    slot: 31
+    material: "GRAY_DYE"
+    display-name: "<gray>Clan bank disabled"
+    lore:
+      - "<gray>This category becomes available with the clan bank."
+
+  previous:
+    slot: 48
+    material: "ARROW"
+    display-name: "<gold>Previous page"
+  info:
+    slot: 49
+    material: "COMPARATOR"
+    display-name: "<gold>{category}"
+    lore:
+      - "<gray>Page: <white>{page}/{pages}"
+      - "<gray>Clans: <white>{count}"
+  next:
+    slot: 50
+    material: "ARROW"
+    display-name: "<gold>Next page"
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+profile-menu:
+  title: "<dark_gray>Clan · <gold>{clan}"
+  size: 54
+
+  info:
+    slot: 13
+    material: "PLAYER_HEAD"
+    display-name: "<gradient:#FFB347:#FFD166>{clan}</gradient>"
+    lore:
+      - "<gray>Tag: <white>{formatted_tag}"
+      - "<gray>Members: <white>{members}/{max_members}"
+      - "<gray>Leaderboard: <white>{ranking_position}"
+      - "<gray>Total points: <white>{ranking_points}"
+      - "<gray>Join mode: <white>{mode}"
+
+  members:
+    slot: 22
+    material: "PLAYER_HEAD"
+    display-name: "<gold>Members"
+
+  primary-action:
+    slot: 24
+
+  ally-action:
+    slot: 21
+
+  war-action:
+    slot: 23
+
+  ally-request:
+    material: "LIME_BANNER"
+    display-name: "<green>Request alliance"
+    lore:
+      - "<gray>Sends a request that requires confirmation."
+
+  ally-incoming:
+    material: "BELL"
+    display-name: "<gold>Alliance request"
+    lore:
+      - "<gray>Choose a response for this clan."
+
+  ally-pending:
+    material: "CLOCK"
+    display-name: "<yellow>Alliance request pending"
+
+  allied:
+    material: "LIME_CONCRETE"
+    display-name: "<green>Allied clan"
+
+  war-request:
+    material: "IRON_SWORD"
+    display-name: "<red>Request clan war"
+    lore:
+      - "<gray>Then choose 24, 48, or 72 hours."
+
+  war-incoming:
+    material: "BELL"
+    display-name: "<red>Kriegsanfrage"
+    lore:
+      - "<gray>Choose a response for this clan."
+
+  war-pending:
+    material: "CLOCK"
+    display-name: "<yellow>War request pending"
+
+  war-active:
+    material: "RED_CONCRETE"
+    display-name: "<red>Active clan war"
+    lore:
+      - "<gray>Ends: <white>{war_ends}"
+
+  permissions:
+    slot: 20
+    material: "COMPARATOR"
+    display-name: "<gold>Permissions"
+    lore:
+      - "<gray>Manage role and member permissions."
+
+  edit:
+    slot: 30
+    material: "ANVIL"
+    display-name: "<gold>Edit clan"
+    lore:
+      - "<gray>Change the clan name, tag, and tag color."
+
+  battlepass:
+    slot: 29
+    material: "EXPERIENCE_BOTTLE"
+    display-name: "<gold>Battlepass"
+
+  bank:
+    slot: 31
+    material: "GOLD_BLOCK"
+    display-name: "<gold>Clan bank"
+
+  vault:
+    slot: 33
+    material: "ENDER_CHEST"
+    display-name: "<light_purple>Clan-Vault"
+
+  homes:
+    slot: 32
+    material: "RESPAWN_ANCHOR"
+    display-name: "<aqua>Clan-Homes"
+    lore:
+      - "<gray>View and use configured clan homes."
+
+  ally-requests:
+    material: "BELL"
+    display-name: "<gold>Alliance requests"
+    lore:
+      - "<gray>Shows incoming alliance requests."
+
+  join:
+    material: "LIME_DYE"
+    display-name: "<green>Join clan"
+
+  accept:
+    material: "LIME_DYE"
+    display-name: "<green>Accept invitation"
+
+  deny:
+    slot: 25
+    material: "RED_DYE"
+    display-name: "<red>Decline invitation"
+
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+clan-edit-menu:
+  title: "<dark_gray>Edit clan · <gold>{clan}"
+  size: 27
+  info:
+    slot: 13
+    material: "PLAYER_HEAD"
+    display-name: "<gradient:#FFB347:#FFD166>{clan}</gradient>"
+    lore:
+      - "<gray>Current tag: <white>{formatted_tag}"
+  name:
+    slot: 11
+    material: "OAK_SIGN"
+    display-name: "<gold>Change clan name"
+    lore:
+      - "<gray>Current: <white>{clan}"
+      - ""
+      - "<yellow>Click: enter a value in chat"
+  tag:
+    slot: 15
+    material: "NAME_TAG"
+    display-name: "<gold>Clan tag & color"
+    lore:
+      - "<gray>Current: <white>{formatted_tag}"
+      - "<gray>MiniMessage or &#RRGGBB with & formatting codes."
+      - ""
+      - "<yellow>Click: enter a value in chat"
+  back:
+    slot: 18
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 26
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+ally-requests-menu:
+  title: "<dark_gray>Alliance requests · <gold>{count}"
+  size: 54
+  request-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 43]
+  request:
+    material: "PLAYER_HEAD"
+    display-name: "<gold>{clan} <gray>[{formatted_tag}<gray>]"
+    lore:
+      - "<gray>Expires: <white>{expires_at}"
+      - ""
+      - "<yellow>Click to respond"
+  empty:
+    slot: 22
+    material: "GRAY_DYE"
+    display-name: "<gray>No pending alliance requests"
+  previous:
+    slot: 48
+    material: "ARROW"
+    display-name: "<gold>Previous page"
+  next:
+    slot: 50
+    material: "ARROW"
+    display-name: "<gold>Next page"
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+battlepass-menu:
+  title: "<dark_gray>Battlepass · <gold>Level {level}"
+  size: 54
+  levels-per-page: 20
+  level-slots:
+    - 36
+    - 37
+    - 28
+    - 19
+    - 10
+    - 11
+    - 12
+    - 21
+    - 30
+    - 39
+    - 40
+    - 41
+    - 32
+    - 23
+    - 14
+    - 15
+    - 16
+    - 25
+    - 34
+    - 43
+
+  filler:
+    material: "GRAY_STAINED_GLASS_PANE"
+    display-name: " "
+
+  info:
+    slot: 4
+    material: "EXPERIENCE_BOTTLE"
+    display-name: "<gold>Clan-Battlepass"
+    lore:
+      - "<gray>Level: <white>{level}"
+      - "<gray>XP: <white>{xp}/{required_xp}"
+      - "<gray>Progress: <white>{progress_percent}%"
+
+  level-locked:
+    material: "RED_STAINED_GLASS_PANE"
+    display-name: "<red>Level {reward_level}"
+    lore:
+      - "<gray>Not reached yet."
+
+  level-milestone-locked:
+    material: "RED_CONCRETE"
+    display-name: "<red>Level {reward_level}"
+    lore:
+      - "<gray>Milestone not reached yet."
+
+  level-unlocked:
+    material: "GREEN_CONCRETE"
+    display-name: "<green>Level {reward_level}"
+    lore:
+      - "<gray>Reached."
+
+  level-claimable:
+    material: "GREEN_CONCRETE"
+    display-name: "<gold>Level {reward_level}"
+    lore:
+      - "<yellow>Click to claim the clan upgrades."
+
+  level-claimed:
+    material: "GREEN_CONCRETE"
+    display-name: "<green>Level {reward_level}"
+    lore:
+      - "<gray>All rewards claimed."
+
+  level-admin:
+    material: "RED_STAINED_GLASS_PANE"
+    display-name: "<red>Level {reward_level} bearbeiten"
+    lore:
+      - "<gray>Rewards: <white>{reward_count}"
+      - "<yellow>Click to add unlocks."
+
+  level-admin-milestone:
+    material: "RED_CONCRETE"
+    display-name: "<red>Level {reward_level} bearbeiten"
+    lore:
+      - "<gray>Rewards: <white>{reward_count}"
+      - "<yellow>Click to add unlocks."
+
+  no-rewards-line: "<dark_gray>No Rewards"
+  reward-line: "<gray>• {reward_name}: <white>+{amount}"
+
+  previous:
+    slot: 48
+    material: "ARROW"
+    display-name: "<gold>Previous levels"
+  next:
+    slot: 50
+    material: "ARROW"
+    display-name: "<gold>Next levels"
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+battlepass-reward-editor-menu:
+  title: "<dark_gray>Rewards · <gold>Level {reward_level}"
+  size: 27
+  instruction:
+    slot: 4
+    material: "WRITABLE_BOOK"
+    display-name: "<gold>In-game reward editor"
+    lore:
+      - "<gray>Left-click: <white>+1"
+      - "<gray>Right-click: <white>-1"
+      - "<gray>The entry is removed at 0."
+  reward-slots:
+    member-slots: 10
+    home-slots: 12
+    vault-pages: 14
+    role-slots: 16
+  reward:
+    display-name: "{reward_name}"
+    lore:
+      - "<gray>Current: <white>+{amount}"
+  back:
+    slot: 18
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 26
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+bank-menu:
+  title: "<dark_gray>Clan bank · <gold>{balance}"
+  size: 54
+  overview:
+    slot: 13
+    material: "GOLD_BLOCK"
+    display-name: "<gold>Clan bank"
+    lore:
+      - "<gray>Balance: <white>{balance}"
+      - "<gray>Currency: <white>{currency}"
+      - "<gray>Provider: <white>{economy_provider}"
+  deposit:
+    slot: 29
+    material: "EMERALD"
+    display-name: "<green>Deposit"
+    lore:
+      - "<gray>Permission: {deposit_state}"
+      - "<yellow>Click to choose an amount."
+  withdraw:
+    slot: 31
+    material: "HOPPER"
+    display-name: "<gold>Withdraw"
+    lore:
+      - "<gray>Permission: {withdraw_state}"
+      - "<yellow>Click to choose an amount."
+  log:
+    slot: 33
+    material: "WRITABLE_BOOK"
+    display-name: "<gold>Bank-Logs"
+    lore:
+      - "<gray>Permission: {log_state}"
+      - "<yellow>View recent actions by player."
+  permissions:
+    slot: 22
+    material: "COMPARATOR"
+    display-name: "<light_purple>Permissions"
+    lore:
+      - "<gray>Manage bank permissions for roles and members."
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+  allowed: "<green>Allowed"
+  denied: "<red>Gesperrt"
+
+bank-amount-menu:
+  title: "<dark_gray>Clan bank · <gold>{action}"
+  size: 54
+  quick-amount-slots: [20, 21, 22, 23, 24]
+  quick-amount:
+    material: "GOLD_NUGGET"
+    display-name: "<gold>{amount}"
+    lore:
+      - "<yellow>Click to {action}."
+  info:
+    slot: 13
+    material: "GOLD_BLOCK"
+    display-name: "<gold>Balance: <white>{balance}"
+    lore:
+      - "<gray>Action: <white>{action}"
+  custom:
+    slot: 31
+    material: "PAPER"
+    display-name: "<light_purple>Custom amount"
+    lore:
+      - "<gray>Enter an amount in chat."
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+bank-log-members-menu:
+  title: "<dark_gray>Bank-Logs · <gold>Players"
+  size: 54
+  member-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 41, 42, 43]
+  member:
+    material: "PLAYER_HEAD"
+    display-name: "<gold>{player}"
+    lore:
+      - "<yellow>Click to view bank actions."
+  previous:
+    slot: 47
+    material: "ARROW"
+    display-name: "<gold>Previous page"
+  info:
+    slot: 49
+    material: "CLOCK"
+    display-name: "<light_purple>Bank-Logs"
+    lore:
+      - "<gray>Players: <white>{count}"
+      - "<gray>Page: <white>{page}/{pages}"
+  next:
+    slot: 51
+    material: "ARROW"
+    display-name: "<gold>Next page"
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+bank-log-entries-menu:
+  title: "<dark_gray>Bank-Logs · <gold>{player}"
+  size: 54
+  date-time-pattern: "dd.MM.yyyy HH:mm:ss"
+  entry-slots: [10, 11, 12, 14, 15, 16, 19, 20, 21, 23, 24, 25, 28, 29, 30, 32, 33, 34]
+  entry:
+    material: "PAPER"
+    display-name: "<gold>{action}"
+    lore:
+      - "<gray>Zeit: <white>{time}"
+      - "<gray>Players: <white>{player}"
+      - "<gray>{details}"
+  empty:
+    slot: 40
+    material: "GRAY_DYE"
+    display-name: "<gray>No bank actions"
+  info:
+    slot: 49
+    material: "CLOCK"
+    display-name: "<light_purple>Recent bank actions"
+    lore:
+      - "<gray>Entries: <white>{count}/18"
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+vault-menu:
+  title: "<dark_gray>Clan-Vault · <light_purple>{page}/{pages}"
+  size: 54
+  storage-slots: 45
+  previous:
+    slot: 47
+    material: "ARROW"
+    display-name: "<gold>Previous page"
+  info:
+    slot: 49
+    material: "ENDER_CHEST"
+    display-name: "<light_purple>Clan-Vault"
+    lore:
+      - "<gray>Page: <white>{page}/{pages}"
+      - "<gray>Deposit items: {deposit_state}"
+      - "<gray>Withdraw items: {withdraw_state}"
+  log:
+    slot: 48
+    material: "WRITABLE_BOOK"
+    display-name: "<gold>Vault-Logs"
+    lore:
+      - "<gray>Recent actions by player"
+  extensions:
+    slot: 50
+    material: "ENCHANTED_BOOK"
+    display-name: "<light_purple>Upgrades"
+    lore:
+      - "<gray>Unlocked: <white>{pages}/{max_pages} Pagen"
+  next:
+    slot: 51
+    material: "ARROW"
+    display-name: "<gold>Next page"
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+  allowed: "<green>Allowed"
+  denied: "<red>Gesperrt"
+
+vault-log-members-menu:
+  title: "<dark_gray>Vault-Logs · <gold>Players"
+  size: 54
+  member-slots:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 37
+    - 38
+    - 39
+    - 41
+    - 42
+    - 43
+  member:
+    material: "PLAYER_HEAD"
+    display-name: "<gold>{player}"
+    lore:
+      - "<gray>Rank: <white>{rank}"
+  previous:
+    slot: 47
+    material: "ARROW"
+    display-name: "<gold>Previous page"
+  info:
+    slot: 49
+    material: "WRITABLE_BOOK"
+    display-name: "<light_purple>Vault-Logs"
+    lore:
+      - "<gray>Players: <white>{count}"
+      - "<gray>Page: <white>{page}/{pages}"
+  next:
+    slot: 51
+    material: "ARROW"
+    display-name: "<gold>Next page"
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+vault-log-entries-menu:
+  title: "<dark_gray>Vault-Logs · <gold>{player}"
+  size: 54
+  date-time-pattern: "dd.MM.yyyy HH:mm:ss"
+  entry-slots:
+    - 10
+    - 11
+    - 12
+    - 14
+    - 15
+    - 16
+    - 19
+    - 20
+    - 21
+    - 23
+    - 24
+    - 25
+    - 28
+    - 29
+    - 30
+    - 32
+    - 33
+    - 34
+  entry:
+    material: "PAPER"
+    display-name: "<gold>{action}"
+    lore:
+      - "<gray>Zeit: <white>{time}"
+      - "<gray>Players: <white>{player}"
+      - "<gray>{details}"
+  empty:
+    slot: 22
+    material: "GRAY_DYE"
+    display-name: "<gray>No vault actions"
+  info:
+    slot: 49
+    material: "CLOCK"
+    display-name: "<light_purple>Recent actions"
+    lore:
+      - "<gray>Entries: <white>{count}/18"
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+invites-menu:
+  title: "<dark_gray>Invitations · <gold>{count}"
+  size: 54
+  invite-slots:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+
+  invite:
+    material: "PLAYER_HEAD"
+    display-name: "<gold>{clan}"
+    lore:
+      - "<gray>Tag: <white>{formatted_tag}"
+      - "<gray>Members: <white>{members}/{max_members}"
+
+  empty:
+    slot: 22
+    material: "GRAY_DYE"
+    display-name: "<gray>No pending invitations"
+
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+confirmation-menu:
+  title: "<dark_gray>Confirm action"
+  size: 27
+  subject-slot: 13
+
+  confirm:
+    slot: 11
+    material: "LIME_DYE"
+    display-name: "<green>Confirm"
+
+  cancel:
+    slot: 15
+    material: "RED_DYE"
+    display-name: "<red>Cancel"
+
+  actions:
+    invite:
+      material: "PLAYER_HEAD"
+      display-name: "<green>{player} invite"
+    kick:
+      material: "PLAYER_HEAD"
+      display-name: "<red>{player} remove"
+    join:
+      material: "PLAYER_HEAD"
+      display-name: "<green>{clan} join"
+    accept:
+      material: "PLAYER_HEAD"
+      display-name: "<green>Accept invitation from {clan}"
+    deny:
+      material: "PLAYER_HEAD"
+      display-name: "<red>Decline invitation from {clan}"
+    leave:
+      material: "PLAYER_HEAD"
+      display-name: "<red>{clan} leave"
+    join-mode-open:
+      material: "LIME_DYE"
+      display-name: "<green>Set join mode to open"
+    join-mode-invite:
+      material: "YELLOW_DYE"
+      display-name: "<yellow>Set join mode to invite only"
+    ally-request:
+      material: "LIME_BANNER"
+      display-name: "<green>Request an alliance with {clan}"
+    war-request:
+      material: "IRON_SWORD"
+      display-name: "<red>War against {clan} · {hours} hours"
+
+war-duration-menu:
+  title: "<dark_gray>War duration · <red>{clan}"
+  size: 27
+  duration-slots:
+    - 11
+    - 13
+    - 15
+  duration:
+    material: "CLOCK"
+    display-name: "<gold>{hours} hours"
+  back:
+    slot: 18
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 26
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+diplomacy-response-menu:
+  title: "<dark_gray>Diplomacy · <gold>{clan}"
+  size: 27
+  subject-slot: 13
+  ally-subject:
+    material: "LIME_BANNER"
+    display-name: "<gold>Alliance request from {clan}"
+  war-subject:
+    material: "IRON_SWORD"
+    display-name: "<red>War request from {clan}"
+    lore:
+      - "<gray>Duration: <white>{hours} hours"
+  accept:
+    slot: 11
+    material: "LIME_DYE"
+    display-name: "<green>Accept"
+  deny:
+    slot: 15
+    material: "RED_DYE"
+    display-name: "<red>Decline"
+  back:
+    slot: 18
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 26
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+input-menu:
+  clan-edit:
+    chat:
+      # The next chat message is read as a clan name or formatted tag.
+      cancel-keyword: "cancel"
+  role-name:
+    chat:
+      # This word cancels an active role input.
+      cancel-keyword: "cancel"
+  role-priority:
+    chat:
+      # Allowed range: 0 to 100. Only priority 0 may be shared.
+      cancel-keyword: "cancel"
+  bank-amount:
+    chat:
+      # Custom deposit and withdrawal amounts are read from the next chat message.
+      cancel-keyword: "cancel"
+
+members-menu:
+  title: "<dark_gray>Members · <gold>{clan}"
+  size: 54
+  # Java DateTimeFormatter using the server time zone.
+  date-time-pattern: "dd.MM.yyyy HH:mm"
+  # 27 slots matching the initial member limit, including the owner.
+  member-slots:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 37
+    - 38
+    - 39
+    - 41
+    - 42
+    - 43
+
+  filler:
+    enabled: true
+    material: "GRAY_STAINED_GLASS_PANE"
+    display-name: " "
+
+  locked-slot:
+    material: "RED_STAINED_GLASS_PANE"
+    display-name: "<red>Locked member slot"
+    lore:
+      - "<gray>This slot must be unlocked first."
+
+  member:
+    display-name: "<gold>{player}"
+    lore:
+      - "<gray>Rank: <white>{rank}"
+      - "<gray>Joined: <white>{joined_at}"
+
+  info:
+    slot: 4
+    material: "PLAYER_HEAD"
+    display-name: "<gold>{clan}"
+    lore:
+      - "<gray>Tag: <white>{formatted_tag}"
+      - "<gray>Members: <white>{members}/{max_members}"
+
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+
+permission-home-menu:
+  title: "<dark_gray>Permissions"
+  size: 27
+  members:
+    slot: 11
+    material: "PLAYER_HEAD"
+    display-name: "<gold>Members"
+  roles:
+    slot: 15
+    material: "NAME_TAG"
+    display-name: "<gold>Roles"
+  back:
+    slot: 18
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 26
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+home-menu:
+  title: "<dark_gray>Clan-Homes · <gold>{set_homes}/{unlocked_homes}"
+  size: 54
+  home-slots: [20, 22, 24, 19, 21, 23, 25, 28, 29, 30, 31, 32, 33, 34, 10, 11, 12, 13, 14, 15, 16, 37, 38, 39, 40, 41, 42, 43]
+  home:
+    material: "LIME_BED"
+    display-name: "<green>Clan-Home {home}"
+    lore:
+      - "<gray>World: <white>{world}"
+      - "<gray>Position: <white>{x}, {y}, {z}"
+      - ""
+      - "<yellow>Left-click: teleport"
+      - "<gold>Right-click: reset"
+      - "<red>Shift-right-click: delete"
+  empty:
+    material: "GRAY_BED"
+    display-name: "<gray>Clan-Home {home}"
+    lore:
+      - "<gray>This slot has not been set."
+      - ""
+      - "<gold>Right-click: set here"
+  info:
+    slot: 49
+    material: "COMPASS"
+    display-name: "<aqua>Clan-Homes"
+    lore:
+      - "<gray>Set: <white>{set_homes}/{unlocked_homes}"
+      - "<gray>Maximum unlockable: <white>{maximum_homes}"
+      - "<gray>Page: <white>{page}/{pages}"
+  extensions:
+    slot: 4
+    material: "EXPERIENCE_BOTTLE"
+    display-name: "<gold>Additional home slots"
+    lore:
+      - "<gray>Additional slots are unlocked through the battlepass."
+  previous:
+    slot: 48
+    material: "ARROW"
+    display-name: "<gold>Previous page"
+  next:
+    slot: 50
+    material: "ARROW"
+    display-name: "<gold>Next page"
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+home-confirmation-menu:
+  title: "<dark_gray>Confirm clan home"
+  size: 27
+  subject:
+    slot: 13
+    material: "RESPAWN_ANCHOR"
+    display-name: "<gold>Clan-Home {home}"
+    lore:
+      - "<gray>{action}"
+  confirm:
+    slot: 11
+    material: "LIME_DYE"
+    display-name: "<green>Confirm"
+  cancel:
+    slot: 15
+    material: "RED_DYE"
+    display-name: "<red>Cancel"
+  actions:
+    set: "The current location will be saved as the clan home."
+    delete: "This clan home will be permanently deleted."
+
+role-list-menu:
+  title: "<dark_gray>Roles · <gold>{roles}/{max_roles}"
+  size: 54
+  role-slots: [11, 12, 13, 14, 15, 20, 21, 22, 23, 24]
+  role:
+    material: "NAME_TAG"
+    display-name: "<gold>{role}"
+    lore:
+      - "<gray>Priority: <white>{priority}"
+      - ""
+      - "<yellow>Click to edit"
+  create:
+    slot: 40
+    material: "LIME_DYE"
+    display-name: "<green>New role"
+  locked:
+    slot: 40
+    material: "RED_STAINED_GLASS_PANE"
+    display-name: "<red>No role slot available"
+    lore:
+      - "<gray>Additional slots can be unlocked later."
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+member-permission-list-menu:
+  title: "<dark_gray>Member permissions"
+  size: 54
+  member-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 41, 42, 43]
+  member:
+    display-name: "<gold>{player}"
+    lore:
+      - "<gray>Role: <white>{role}"
+      - ""
+      - "<yellow>Click to edit"
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+role-permissions-menu:
+  title: "<dark_gray>Role · <gold>{role}"
+  size: 54
+  permission-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34]
+  rename:
+    slot: 40
+    material: "NAME_TAG"
+    display-name: "<gold>Rename role"
+    lore:
+      - "<gray>Current: <white>{role}"
+  move-up:
+    slot: 38
+    material: "SPECTRAL_ARROW"
+    display-name: "<green>Move role up"
+    lore:
+      - "<gray>Moves the role up in the rank hierarchy."
+  move-down:
+    slot: 42
+    material: "ARROW"
+    display-name: "<yellow>Move role down"
+    lore:
+      - "<gray>Moves the role down in the rank hierarchy."
+  priority:
+    slot: 49
+    material: "COMPARATOR"
+    display-name: "<gold>Role priority"
+    lore:
+      - "<gray>Current priority: <white>{priority}"
+      - ""
+      - "<dark_gray>Higher roles may manage lower roles."
+      - "<yellow>Click to enter a value from 0 to 100."
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+member-permissions-menu:
+  title: "<dark_gray>Mitglied · <gold>{player}"
+  size: 54
+  permission-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34]
+  role:
+    slot: 4
+    material: "NAME_TAG"
+    display-name: "<gold>Role: <white>{role}"
+    lore:
+      - "<yellow>Click to change"
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+role-assignment-menu:
+  title: "<dark_gray>Select role"
+  size: 54
+  role-slots: [11, 12, 13, 14, 15, 20, 21, 22, 23, 24]
+  role:
+    material: "NAME_TAG"
+    display-name: "<gold>{role}"
+    lore:
+      - "<gray>Priority: <white>{priority}"
+  back:
+    slot: 45
+    material: "ARROW"
+    display-name: "<yellow>Back"
+  close:
+    slot: 53
+    material: "BARRIER"
+    display-name: "<red>Close"
+
+permission-items:
+  states:
+    inherit: "Inherit from role"
+    allow: "Allowed"
+    deny: "Verweigert"
+  inherit:
+    material: "GRAY_DYE"
+    display-name: "<gray>{permission}"
+    lore:
+      - "<gray>Status: <white>{state}"
+      - "<dark_gray>{permission_id}"
+  allow:
+    material: "LIME_DYE"
+    display-name: "<green>{permission}"
+    lore:
+      - "<gray>Status: <green>{state}"
+      - "<dark_gray>{permission_id}"
+  deny:
+    material: "RED_DYE"
+    display-name: "<red>{permission}"
+    lore:
+      - "<gray>Status: <red>{state}"
+      - "<dark_gray>{permission_id}"
+
+permission-labels:
+  invite: "Players invite"
+  kick: "Members kicken"
+  diplomacy-manage: "Manage diplomacy"
+  name-change: "Change clan name"
+  tag-change: "Change clan tag"
+  home-view: "View clan homes"
+  home-teleport: "Clan-Homes benutzen"
+  home-set: "Set clan home"
+  home-delete: "Delete clan home"
+  rank-manage: "Manage ranks"
+  bank-view: "View clan bank"
+  bank-deposit: "Deposit into clan bank"
+  bank-withdraw: "Withdraw from clan bank"
+  bank-log: "View clan bank log"
+  vault-view: "View vault"
+  vault-deposit: "In Vault einlagern"
+  vault-withdraw: "Aus Vault entnehmen"
+  vault-log: "View vault log"
+  vault-manage-extensions: "Manage vault upgrades"

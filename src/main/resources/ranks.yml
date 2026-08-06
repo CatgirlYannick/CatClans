@@ -1,0 +1,65 @@
+# ============================================================
+# CatClans - Default Ranks
+# ============================================================
+# Permissions use conservative defaults and are fully configurable.
+# The order represents the rank hierarchy.
+# ============================================================
+
+config-version: 36
+
+standard-ranks:
+  owner:
+    display-name: "Owner"
+    priority: 100
+    permissions:
+      - "*"
+
+  co-owner:
+    display-name: "Co-Owner"
+    priority: 80
+    permissions:
+      - "invite"
+      - "kick"
+      - "diplomacy.manage"
+      - "tag.change"
+      - "home.view"
+      - "home.teleport"
+      - "home.set"
+      - "home.delete"
+      - "rank.manage"
+      - "bank.view"
+      - "bank.deposit"
+      - "bank.withdraw"
+      - "bank.log"
+      - "vault.view"
+      - "vault.deposit"
+      - "vault.withdraw"
+      - "vault.log"
+      - "vault.extensions.manage"
+
+  moderator:
+    display-name: "Moderator"
+    priority: 60
+    permissions:
+      - "invite"
+      - "kick"
+      - "bank.view"
+      - "vault.view"
+      - "home.view"
+      - "home.teleport"
+
+  member:
+    display-name: "Member"
+    priority: 40
+    permissions:
+      - "bank.view"
+      - "vault.view"
+      - "home.view"
+      - "home.teleport"
+
+  recruit:
+    display-name: "Recruit"
+    priority: 20
+    permissions:
+      - "home.view"
+      - "home.teleport"

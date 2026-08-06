@@ -1,0 +1,25 @@
+# ============================================================
+# CatClans - Item-Vault
+# ============================================================
+# Purpose:
+#   Controls the persistent clan item vault, separate from the money system.
+#
+# Sicherheit:
+#   - Only one writable vault session is allowed per clan.
+#   - Shift-click, double-click, hotbar, and drag actions are blocked.
+#   - Changes are stored per slot through the serial service worker.
+# ============================================================
+
+config-version: 36
+
+general:
+  enabled: true
+  absolute-max-pages: 7
+  storage-slots-per-page: 45
+  # Protects the database and worker from extremely large NBT items.
+  max-serialized-item-bytes: 1048576
+
+logging:
+  log-deposits: true
+  log-withdrawals: true
+  log-replacements: true

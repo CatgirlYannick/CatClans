@@ -1,0 +1,56 @@
+# ============================================================
+# CatClans - Optional Integrations
+# ============================================================
+# Hooks remain read-only or disabled until each integration
+# has a defined contract and is enabled explicitly.
+# ============================================================
+
+config-version: 36
+
+vault:
+  enabled: true
+  required: false
+  require-economy-provider-when-used: true
+
+ezeconomy:
+  enabled: true
+  required: false
+  # Exact Bukkit plugin and Vault provider name of the official EzEconomy JAR.
+  plugin-name: "EzEconomy"
+  # Checks whether Vault actually provides EzEconomy.
+  validate-economy-provider: true
+  # false: warn and disable the bank safely; true: abort plugin startup.
+  provider-mismatch-is-error: false
+
+luckperms:
+  enabled: true
+  required: false
+  # Do not enable automatic role synchronization.
+  enable-group-sync: false
+  validate-groups-on-start: true
+  missing-groups-are-errors: false
+  groups:
+    default: "default"
+    support: "support"
+    management: "management"
+    administration: "administration"
+
+placeholderapi:
+  enabled: true
+  required: false
+  register-internal-expansion: true
+  identifier: "catclans"
+
+interactivechat:
+  enabled: true
+  required: false
+  plugin-name: "InteractiveChat"
+
+cat-claim-plugin:
+  enabled: false
+  required: false
+  plugin-name: "CatChunks"
+
+cat-core-api:
+  enabled: false
+  required: false

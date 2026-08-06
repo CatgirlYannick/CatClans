@@ -1,0 +1,59 @@
+# ============================================================
+# CatClans - Economy and Clan Bank
+# ============================================================
+# Purpose:
+#   Controls all money features through an installed Vault economy provider.
+#
+# Notes:
+#   - CatClans does not create its own player currency.
+#   - The visible currency name is configurable and defaults to Coins.
+#   - The clan bank is safely disabled without Vault and an economy provider.
+#   - Balances are stored internally as lossless decimal values.
+# ============================================================
+
+config-version: 36
+
+general:
+  enabled: true
+  # Currently supported interchangeable provider type.
+  # EzEconomy and future economy plugins connect through this Vault interface.
+  provider: "VAULT"
+
+currency:
+  # Visible label only; Vault provides the player balance.
+  display-name: "Coins"
+
+clan-creation:
+  # Default value: free.
+  charge-enabled: false
+  price: 0.0
+  refund-on-create-failure: true
+
+clan-bank:
+  enabled: true
+
+  # Smallest accepted amount. Values are then rounded to decimal-scale.
+  minimum-deposit: 0.01
+  minimum-withdrawal: 0.01
+
+  decimal-scale: 2
+  # Java rounding mode: HALF_UP, HALF_EVEN, DOWN, or UP.
+  rounding-mode: "HALF_UP"
+
+  # Use 1 to 7 positive amounts. GUI slots are defined in gui.yml.
+  quick-amounts:
+    - "100"
+    - "1000"
+    - "10000"
+    - "100000"
+    - "1000000"
+
+  logging:
+    log-deposits: true
+    log-withdrawals: true
+    # The GUI displays at most 18 entries per player.
+    maximum-gui-entries: 18
+
+formatting:
+  # Only the number is formatted; currency.display-name is appended.
+  fallback-decimal-pattern: "#,##0.00"

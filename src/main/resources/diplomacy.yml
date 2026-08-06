@@ -1,0 +1,34 @@
+# ============================================================
+# CatClans - Alliances and Clan Wars
+# ============================================================
+# Purpose:
+#   Controls persistent clan requests and confirmed war durations.
+#
+# Notes:
+#   - Owner besitzen diplomacy.manage immer.
+#   - Other members require the diplomacy.manage clan permission.
+#   - Money stakes remain disabled until the currency rules are finalized.
+# ============================================================
+
+config-version: 36
+
+general:
+  enabled: true
+
+requests:
+  # Anfragen verschwinden nach dieser Zeit automatisch aus den GUIs.
+  expiration-hours: 24
+
+  # Protects the database and GUI from request spam. Outgoing requests are counted.
+  maximum-pending-per-clan: 25
+
+wars:
+  # Only these options are offered in the selection GUI.
+  # Each value must be between 1 and 168 hours.
+  allowed-duration-hours:
+    - 24
+    - 48
+    - 72
+
+  # Money stakes are not connected to the active clan bank yet.
+  money-wager-enabled: false

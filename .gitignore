@@ -1,0 +1,20 @@
+# Maven
+target/
+dependency-reduced-pom.xml
+runtime/
+*.db
+*.db-shm
+*.db-wal
+logs/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# System
+.DS_Store
+Thumbs.db

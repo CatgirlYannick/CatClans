@@ -1,0 +1,40 @@
+# ============================================================
+# CatClans - Performance
+# ============================================================
+# Purpose:
+#   Limits load, memory use, and unnecessary work on the server thread.
+#
+# Notes:
+#   - Database writes run serially on exactly one worker.
+#   - Placeholder lesen nur aus dem Cache.
+#   - No periodic tick or TPS polling runs by default.
+#
+# Version:
+#   8
+# ============================================================
+
+config-version: 36
+
+cache:
+  enabled: true
+  preload-on-start: true
+  # Safety limit against accidentally unbounded preloading.
+  maximum-clans: 5000
+
+commands:
+  # Limits chat output and temporary component creation for /clan list.
+  maximum-list-entries: 100
+
+database:
+  worker-threads: 1
+  maximum-queued-operations: 2048
+  shutdown-timeout-seconds: 10
+
+gui:
+  render-only-on-open: true
+  live-refresh-enabled: false
+
+diagnostics:
+  startup-summary: true
+  # No permanent sampling loop; external tools such as spark remain responsible.
+  periodic-performance-sampling: false

@@ -1,0 +1,40 @@
+# ============================================================
+# CatClans - Clan-Homes
+# ============================================================
+
+config-version: 36
+
+general:
+  enabled: true
+
+limits:
+  # Each clan starts with three slots. Battlepass rewards add more.
+  default-slots: 3
+  # Must cover default-slots plus the intended battlepass bonus.
+  absolute-max-slots: 103
+
+teleport:
+  # 0 disables the cooldown. Cooldown state is kept in memory only.
+  cooldown-seconds: 0
+  allow-cross-world: true
+
+safety:
+  # Feet and head blocks must be passable and free of liquids.
+  require-solid-ground: true
+  unsafe-materials:
+    - "AIR"
+    - "CAVE_AIR"
+    - "VOID_AIR"
+    - "WATER"
+    - "LAVA"
+    - "POWDER_SNOW"
+    - "FIRE"
+    - "SOUL_FIRE"
+    - "CACTUS"
+    - "MAGMA_BLOCK"
+    - "CAMPFIRE"
+    - "SOUL_CAMPFIRE"
+    - "SWEET_BERRY_BUSH"
+    - "WITHER_ROSE"
+    - "END_PORTAL"
+    - "END_GATEWAY"

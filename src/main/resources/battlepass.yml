@@ -1,0 +1,71 @@
+# ============================================================
+# CatClans - Battlepass
+# ============================================================
+# Purpose:
+#   Controls clan-wide progression, XP sources, and unlock limits.
+#
+# Notes:
+#   - Levels start at 0 and have no configured maximum level.
+#   - Rewards are configured in game by administrators and claimed by the owner.
+#   - Decimal values are stored as text in SQLite to preserve precision.
+# ============================================================
+
+config-version: 36
+
+general:
+  enabled: true
+  display-name: "Battlepass"
+
+progression:
+  # XP required from level 0 to level 1.
+  base-xp-required: 100.0
+  # Each additional level requires 1.75 percent more XP.
+  growth-percent-per-level: 1.75
+  decimal-scale: 2
+  rounding-mode: "HALF_UP"
+
+sources:
+  online-activity:
+    enabled: true
+    interval-minutes: 30
+    xp-per-online-clan-member: 50.0
+
+  daily-login:
+    enabled: true
+    timezone: "Europe/Berlin"
+    base-xp: 25.0
+    # Tag 2 bis 9: base-xp * (Streak-Tag - 1) * 1,3.
+    early-streak-multiplier: 1.3
+    # From day 10 onward, the previous day value grows by only 0.8 percent.
+    late-growth-starts-at-day: 10
+    late-growth-percent-per-day: 0.8
+
+  pvp:
+    enabled: true
+    xp-per-kill: 15.0
+    repeated-victim-cooldown-minutes: 15
+    allow-same-clan-kills: false
+
+rewards:
+  supported-types:
+    member-slots:
+      enabled: true
+      material: "PLAYER_HEAD"
+      display-name: "<green>Member slots"
+    home-slots:
+      enabled: true
+      material: "ENDER_PEARL"
+      display-name: "<aqua>Clan-Homes"
+    vault-pages:
+      enabled: true
+      material: "ENDER_CHEST"
+      display-name: "<light_purple>Vault-Seiten"
+    role-slots:
+      enabled: true
+      material: "NAME_TAG"
+      display-name: "<gold>Role slots"
+
+limits:
+  # 0 means no additional home slots, not unlimited slots.
+  # This value protects connected home plugins from invalid administrator entries.
+  absolute-max-bonus-home-slots: 100

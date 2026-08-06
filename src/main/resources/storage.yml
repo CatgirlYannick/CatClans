@@ -1,0 +1,76 @@
+# ============================================================
+# CatClans - Storage and Logs
+# ============================================================
+
+config-version: 36
+
+backups:
+  config-migrations:
+    # Only the newest configuration backups are kept per plugin data folder.
+    # Allowed values are 1 or 2. Higher values are rejected for safety.
+    max-snapshots: 2
+
+database:
+  # Allowed: sqlite or mysql. Switching does not migrate existing data automatically.
+  type: "sqlite"
+
+  sqlite:
+    # Relative to the plugin data folder. Absolute paths are not allowed.
+    file: "data/clans.db"
+    enable-write-ahead-log: true
+    busy-timeout-milliseconds: 5000
+    # With WAL, NORMAL is a good balance between safety and low I/O load.
+    synchronous-mode: "NORMAL"
+    wal-auto-checkpoint-pages: 1000
+    optimize-on-close: true
+
+  mysql:
+    # The schema and all tables are created automatically on first startup.
+    # The database itself must already exist.
+    host: "localhost"
+    port: 3306
+    database: "catclans"
+
+    # Secrets are intentionally read only from environment variables.
+    # Beispiel unter Windows:
+    #   CATCLANS_DATABASE_USER and CATCLANS_DATABASE_PASSWORD
+    username-environment-variable: "CATCLANS_DATABASE_USER"
+    password-environment-variable: "CATCLANS_DATABASE_PASSWORD"
+
+    # TLS is recommended for remote production databases.
+    use-ssl: false
+    verify-server-certificate: true
+
+    # Kleine, feste Timeouts verhindern blockierte Service-Queues.
+    connect-timeout-milliseconds: 5000
+    socket-timeout-milliseconds: 10000
+    # Run health checks at most once per interval; 30 avoids unnecessary database pings.
+    validation-interval-seconds: 30
+
+logging:
+  text-audit:
+    enabled: true
+    # Relative to the plugin data folder.
+    directory: "logs/clans"
+    retention-days: 14
+    file-pattern: "yyyy-MM-dd'.log'"
+    timestamp-pattern: "yyyy-MM-dd HH:mm:ss.SSS XXX"
+    log-to-console-on-write-error: true
+
+  vault-audit:
+    enabled: true
+    # Vault actions are intentionally separated from general clan logs.
+    directory: "logs/vault"
+    retention-days: 14
+    file-pattern: "yyyy-MM-dd'.log'"
+    timestamp-pattern: "yyyy-MM-dd HH:mm:ss.SSS XXX"
+    log-to-console-on-write-error: true
+
+  bank-audit:
+    enabled: true
+    # Bank actions are stored separately from clan and item-vault logs.
+    directory: "logs/bank"
+    retention-days: 14
+    file-pattern: "yyyy-MM-dd'.log'"
+    timestamp-pattern: "yyyy-MM-dd HH:mm:ss.SSS XXX"
+    log-to-console-on-write-error: true

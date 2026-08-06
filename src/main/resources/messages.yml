@@ -1,0 +1,193 @@
+# ============================================================
+# CatClans - Messages
+# ============================================================
+# MiniMessage format. Placeholders exclusively use {name}.
+# Player names, clan data, and command input are inserted as safe text.
+# Only {formatted_tag} is rendered as a component after tag validation.
+# Global branding placeholders:
+#   {server_name}  Value from config.yml branding.server-name
+#   {author_name}  Value from config.yml branding.author-name
+#   {plugin_name}  Value from config.yml branding.plugin-name
+# ============================================================
+
+config-version: 36
+
+formatting:
+  small-caps:
+    # Formats fixed text and dynamic values such as clan, tag, and player names.
+    enabled: true
+
+  minimessage:
+    # Supports standard colors, RGB such as <#55FFAA>, and gradients.
+    # Examples: <#55FFAA>Text</#55FFAA> or <gradient:#FFAA00:#55FFAA>Text</gradient>
+    rgb-enabled: true
+    gradients-enabled: true
+    validate-on-start: true
+
+prefix: "<dark_gray>[<gradient:#FFB347:#FFD166>{plugin_name}</gradient>]</dark_gray> "
+
+errors:
+  no-permission: "<red>You do not have permission to do that."
+  players-only: "<red>This command can only be used by players."
+  invalid-usage: "<red>Invalid input.</red> <gray>{usage}"
+  internal: "<red>The action could not be completed because of an internal error."
+  feature-disabled: "<yellow>This feature is currently disabled."
+  player-not-found: "<red>Player {player} is not online."
+  clan-not-found: "<red>Clan {clan} was not found."
+  not-in-clan: "<red>You are not in a clan."
+  already-in-clan: "<red>You are already a clan member."
+  target-already-in-clan: "<red>{player} is already a clan member."
+  name-taken: "<red>This clan name is already taken."
+  tag-taken: "<red>This clan tag is already taken."
+  invalid-name: "<red>The clan name is invalid. Use between {min} and {max} characters."
+  invalid-tag: "<red>The clan tag is invalid. The visible tag must contain {min} to {max} letters or numbers; MiniMessage and & formatting codes do not count."
+  invite-required: "<red>This clan only accepts invited players."
+  invite-not-found: "<red>You do not have a valid invitation from this clan."
+  clan-full: "<red>This clan has reached its member limit."
+  owner-cannot-leave: "<red>You are the final clan member. Delete the clan with /clan delete confirm."
+  clan-busy: "<yellow>The clan is currently being saved. Try deleting it again shortly."
+  clan-right-missing: "<red>Your clan role does not allow this action."
+  owner-only: "<red>This action is only available to the clan owner."
+  cannot-invite-self: "<red>You cannot invite yourself."
+  member-not-found: "<red>This player is no longer a clan member."
+  cannot-kick-self: "<red>You cannot kick yourself."
+  cannot-kick-owner: "<red>The clan owner cannot be kicked."
+  rank-too-low: "<red>You can only manage members below your own rank."
+  role-not-found: "<red>This clan role was not found."
+  role-limit-reached: "<red>All currently unlocked role slots are occupied."
+  role-name-taken: "<red>This role name is already in use."
+  invalid-role-name: "<red>The role name is invalid."
+  invalid-role-priority: "<red>The role priority must be a whole number from 0 to 100."
+  role-priority-taken: "<red>This role priority is already in use. Only priority 0 may be shared."
+  owner-role-locked: "<red>The owner role and its permissions are protected."
+  economy-unavailable: "<red>The economy is currently unavailable."
+  insufficient-funds: "<red>You need {price} to create a clan."
+  economy-transaction-failed: "<red>The payment could not be processed safely."
+  bank-disabled: "<yellow>The clan bank is currently disabled."
+  invalid-bank-amount: "<red>This {currency} amount is invalid or too small."
+  bank-insufficient-funds: "<red>The clan bank does not contain enough {currency}."
+  bank-busy: "<yellow>A transaction is already running for this clan bank."
+  bank-compensation-failed: "<red>The bank transaction could not be rolled back automatically. Contact an administrator immediately."
+  battlepass-disabled: "<yellow>The battlepass is currently disabled."
+  reward-not-available: "<yellow>This level has no claimable reward."
+  reward-already-claimed: "<yellow>The rewards for this level have already been claimed."
+  reward-limit-reached: "<red>This reward would exceed a fixed clan limit."
+  vault-disabled: "<yellow>The item vault is currently disabled."
+  vault-page-locked: "<red>This vault page has not been unlocked."
+  vault-item-too-large: "<red>This item contains too much data for the clan vault."
+  vault-in-use: "<yellow>The clan vault is currently being used by {player}."
+  home-disabled: "<yellow>Clan homes are currently disabled."
+  home-slot-locked: "<red>This clan home slot has not been unlocked."
+  home-not-set: "<yellow>This clan home has not been set."
+  home-location-unsafe: "<red>This location is not a safe clan home destination."
+  home-world-unavailable: "<red>The world for this clan home is currently unavailable."
+  home-cross-world-disabled: "<yellow>Cross-world clan home teleportation is disabled."
+  home-teleport-cooldown: "<yellow>You can teleport to a clan home again in {seconds} seconds."
+  home-teleport-failed: "<red>The clan home teleport failed."
+  pvp-reward-cooldown: "<gray>This kill grants no XP because of the anti-farming cooldown."
+  diplomacy-disabled: "<yellow>Alliances and clan wars are currently disabled."
+  diplomacy-self-target: "<red>You cannot send a request to your own clan."
+  diplomacy-request-not-found: "<red>This diplomacy request no longer exists."
+  diplomacy-request-pending: "<yellow>A matching request is already pending between these clans."
+  diplomacy-relation-exists: "<yellow>These clans already have an alliance or an active war."
+  diplomacy-request-limit: "<red>Your clan has reached the pending diplomacy request limit."
+  invalid-war-duration: "<red>This war duration is not allowed."
+  war-not-active: "<yellow>There is no active clan war between {clan_one} and {clan_two}."
+
+general:
+  create-command-help:
+    - "<gold>Create a clan"
+    - "<gray>Enter the complete command in chat:"
+    - "<yellow>{usage}"
+    - "<gray>Order: formatted tag first, complete clan name second."
+    - "<gray>Tag: {tag_min} to {tag_max} visible letters or numbers; MiniMessage or &#RRGGBB with & formatting codes is supported."
+    - "<gray>Clan name: up to {name_max} characters and may contain spaces."
+    - "<gray>Example without color: <white>{example}"
+    - "<gray>Example with RGB: <white>{rgb_example}"
+  help:
+    - "<gold>/clan create <FormattedTag> <Name></gold> <gray>- Create a clan"
+    - "<gold>/clan invite <Player></gold> <gray>- Invite a player"
+    - "<gold>/clan accept <Clan></gold> <gray>- Accept an invitation"
+    - "<gold>/clan deny <Clan></gold> <gray>- Decline an invitation"
+    - "<gold>/clan join <Clan></gold> <gray>- Join an open clan"
+    - "<gold>/clan leave [Reason]</gold> <gray>- Leave your clan"
+    - "<gold>/clan delete confirm</gold> <gray>- Permanently delete your clan"
+    - "<gold>/clan joinmode <invite|open></gold> <gray>- Change the join mode"
+    - "<gold>/clan tag <FormattedTag></gold> <gray>- Change the clan tag"
+    - "<gold>/clan profile [Clan]</gold> <gray>- Open a public profile"
+    - "<gold>/clan members [Clan]</gold> <gray>- View clan members"
+    - "<gold>/clan list</gold> <gray>- View all clans"
+    - "<gold>/clantop</gold> <gray>- Open the permanent clan leaderboard"
+  created: "<green>Clan <white>{clan}</white> with tag <white>{formatted_tag}</white> was created."
+  name-changed: "<green>The clan name is now <white>{clan}</white>."
+  tag-changed: "<green>The clan tag is now <white>{formatted_tag}</white>."
+  clan-name-edit-prompt: "<gold>Enter the new clan name in chat.</gold> <gray>Maximum: {max} characters. Enter <yellow>{cancel}</yellow> to cancel."
+  clan-tag-edit-prompt: "<gold>Enter the new formatted clan tag in chat.</gold> <gray>Visible length: {min} to {max}; formatting length: up to {format_max}. Enter <yellow>{cancel}</yellow> to cancel."
+  clan-edit-input-cancelled: "<yellow>Clan editing was cancelled."
+  creation-price-withdrawn: "<gray><white>{price}</white> was charged for creating the clan."
+  creation-price-refunded: "<yellow>{price} was refunded because the clan could not be created."
+  invited: "<green>{player} was invited to the clan."
+  invite-received: "<gold>You were invited to clan {clan}.</gold> <gray>Use /clan accept {clan}."
+  invite-accepted: "<green>You joined clan {clan}."
+  invite-denied: "<yellow>The invitation from {clan} was declined."
+  joined: "<green>You joined the open clan {clan}."
+  left: "<yellow>You left clan {clan}."
+  owner-received: "<gold>You are now the owner of clan {clan}."
+  clan-deleted: "<red>Clan {clan} was permanently deleted."
+  kicked: "<yellow>{player} was removed from the clan."
+  you-were-kicked: "<red>You were removed from clan {clan}."
+  join-mode-changed: "<green>The join mode is now {mode}."
+  role-name-create-prompt: "<gold>Enter the new role name in chat.</gold> <gray>Maximum: {max} characters. Enter <yellow>{cancel}</yellow> to cancel."
+  role-name-rename-prompt: "<gold>Enter the replacement role name in chat.</gold> <gray>Maximum: {max} characters. Enter <yellow>{cancel}</yellow> to cancel."
+  role-name-input-cancelled: "<yellow>Role input was cancelled."
+  role-created: "<green>Role <white>{role}</white> was created."
+  role-renamed: "<green>The role is now named <white>{role}</white>."
+  role-priority-prompt: "<gold>Enter the new role priority from 0 to 100 in chat.</gold> <gray>Only 0 may be shared. Enter <yellow>{cancel}</yellow> to cancel."
+  role-priority-input-cancelled: "<yellow>Priority input was cancelled."
+  role-priority-changed: "<green>The priority of <white>{role}</white> is now <white>{priority}</white>."
+  home-set: "<green>Clan home <white>{home}</white> was saved at your location."
+  home-deleted: "<yellow>Clan home {home} was deleted."
+  home-teleported: "<green>You were teleported to clan home <white>{home}</white>."
+  ally-request-sent: "<green>The alliance request was sent to {clan}."
+  war-request-sent: "<green>The {hours}-hour war request was sent to {clan}."
+  ally-request-accepted: "<green>The alliance with {clan} is now active."
+  ally-request-denied: "<yellow>The alliance request from {clan} was declined."
+  war-request-accepted: "<red>The clan war against {clan} is now active."
+  war-request-denied: "<yellow>The war request from {clan} was declined."
+  war-ended-by-admin: "<yellow>The war between {clan_one} and {clan_two} was scored and ended by an administrator.</yellow> <white>{result}</white> <gray>Deaths: {clan_one} {clan_one_deaths}, {clan_two} {clan_two_deaths}."
+  list-header: "<gold>Clans</gold> <gray>({count})"
+  list-entry: "<gray>- <white>{clan}</white> <dark_gray>[</dark_gray>{formatted_tag}<dark_gray>]</dark_gray> <gray>{members}/{max_members}"
+
+battlepass:
+  daily-login-xp: "<green>+{xp} clan XP</green> <gray>for your daily login. Streak: <white>{streak}"
+  pvp-kill-xp: "<green>+{xp} clan XP</green> <gray>for the PvP kill."
+  level-up: "<gold>The clan battlepass is now level <white>{level}</white>."
+  reward-claimed: "<green>The clan unlocks for level {level} were activated."
+  reward-updated: "<green>The reward for level {level} was updated in game."
+
+vault:
+  saved: "<green>The vault change was saved."
+
+bank:
+  deposit-prompt: "<gold>Enter the {currency} amount to deposit in chat.</gold> <gray>Enter <yellow>{cancel}</yellow> to cancel."
+  withdraw-prompt: "<gold>Enter the {currency} amount to withdraw in chat.</gold> <gray>Enter <yellow>{cancel}</yellow> to cancel."
+  input-cancelled: "<yellow>Bank input was cancelled."
+  deposited: "<green>{amount} was deposited. New balance: <white>{balance}</white>."
+  withdrawn: "<green>{amount} was withdrawn. New balance: <white>{balance}</white>."
+
+admin:
+  clan-deleted: "<green>Clan {clan} was deleted administratively."
+  war-ended: "<green>The war between {clan_one} and {clan_two} was scored and ended.</green> <white>{result}</white> <gray>Deaths: {clan_one} {clan_one_deaths}, {clan_two} {clan_two_deaths}."
+
+profile:
+  header: "<gold>Clan profile: <white>{clan}</white>"
+  tag: "<gray>Tag: <white>{formatted_tag}"
+  members: "<gray>Members: <white>{members}/{max_members}"
+  ranking-tier: "<gray>Leaderboard rank: <white>{ranking_tier}"
+  join-mode: "<gray>Join mode: <white>{join_mode}"
+  ranking-tier-unavailable: "Not available yet"
+
+values:
+  join-mode:
+    invite-only: "Invite only"
+    open: "Open"
